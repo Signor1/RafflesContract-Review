@@ -70,3 +70,32 @@ So, GHST is Aavegotchi’s curvy native utility token. Users who stake GHST are 
       - [Function: getEntrants](#function-getentrants)
       - [Function: claimPrize](#function-claimprize)
   - [Summary And Proposal](#summary-and-proposal)
+
+## Pragma Version and License
+The contract uses Solidity version 0.8.0, which is a relatively recent version. It includes the SPDX license identifier MIT, indicating that the code is licensed under the MIT License. This is a permissive license that allows for reuse within proprietary software provided all copies of the licensed software include a copy of the MIT License terms and the copyright notice.
+
+## Imported Interfaces
+
+### IERC1155.sol: 
+```
+import "./interfaces/IERC1155.sol";
+```
+ERC1155 is an Ethereum token standard which is designed to be a versatile way of creating both fungible (interchangeable) and non-fungible tokens. With this multi-token standard, a single smart contract can handle multiple token types. IERC1155 interface is a standard interface that defines a set of functions that a contract must implement to be ERC1155 compliant. This standard allows for the creation, transfer, and management of unique tokens, each of which can represent ownership of a specific item or asset. In the context of the RafflesContract, this interface is used to interact with ERC1155 tokens that are entered into the raffles. The contract uses functions like safeTransferFrom to transfer tokens from one address to another, ensuring that the transfer is safe and that the receiving address is capable of handling ERC1155 tokens.
+
+### LinkTokenInterface.sol: 
+```
+import "./chainlink/LinkTokenInterface.sol";
+```
+The LinkTokenInterface interface is specific to the Chainlink network and represents the LINK token, which is used for paying for Chainlink services, including VRF (Verifiable Random Function) requests. The VRF is a provably fair source of randomness, which is crucial for the fairness and security of the raffle draws. This contract uses this interface to interact with the LINK token, specifically to transfer LINK tokens from the contract owner to the contract for paying VRF fees and to check the balance of LINK tokens in the contract.
+
+### IERC173.sol: 
+```
+import "./interfaces/IERC173.sol";
+```
+The IERC173 interface is a standard interface for ownership management on the Ethereum blockchain. It defines a set of functions that a contract must implement to be ERC173 compliant. This standard allows for the transfer of ownership of a contract, which is important for the governance and security of the contract. Here, this interface is used to implement functions like owner and transferOwnership, which allow the current owner of the contract to transfer ownership to a new address.
+
+### IERC165.sol: 
+```
+import "./interfaces/IERC165.sol";
+```
+The IERC165 interface is a standard interface for interface detection. It defines a function `supportsInterface` that a contract must implement to be ERC165 compliant. This standard allows a contract to specify which interfaces it supports, which is useful for interacting with contracts that may implement multiple standards. In this RafflesContract, this interface is used to implement the supportsInterface function, which allows other contracts or addresses to check if the RafflesContract supports specific interfaces, such as ERC1155 or ERC165 itself.
