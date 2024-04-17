@@ -8,6 +8,8 @@ The Raffle Contract, owned by Aavegotchi, serves as a platform for conducting ra
 ### Business Logic:
 The contract enables the initiation of raffles by the contract owner, Aavegotchi, with customizable parameters such as duration and associated prizes. Users participate by submitting ERC1155 tokens as entry tickets. The contract employs a secure random number generation process to determine winners at the end of each raffle period. Winners are then able to claim their prizes, promoting excitement and interaction within the Aavegotchi community.
 
+So, GHST is Aavegotchi’s curvy native utility token. Users who stake GHST are awarded FRENS. These FRENS can be used to purchase Raffle Tickets which provide holders the chance to win valuable Aavegotchi NFTs. Hence, any user who wants to participate in the raffle must possess FRENS. 
+
 ## Table of Contents
 
 - [Raffle Contract](#raffle-contract)
